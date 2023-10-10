@@ -1,0 +1,49 @@
+{% extends "home.html" %}
+{% block title %}
+<title>Register</title>
+{% endblock title %}
+{% block body %}
+<h1 class="text-center">Register page</h1>
+<h4 class="y"  >Note : fill following details !</h4>
+<form class="my-3" method="POST" action="/register">
+  <div class="container">
+    <!-- Flash messages block -->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="alert alert-info">
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+    <div class="form-group">
+      <label for="email">Email address</label>
+      <input type="email" class="form-control" id="email" name="email"  placeholder="Enter email">
+    
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    </div>
+    
+    <div class="form-group">
+        <label for="username">User Nmae</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="username">
+      </div>
+
+    <div class="form-group">
+        <label for="firstname">First Nmae</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="firstname">
+      </div>
+
+      <div class="form-group">
+        <label for="lastname">Last Nmae</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="lastname">
+      </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{% endblock body %}
